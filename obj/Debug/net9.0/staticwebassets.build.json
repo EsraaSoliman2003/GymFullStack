@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0VkciDCiNtyUqu85MZjIYUSK2qDumM7h1ggwuFo9C0Y=",
+  "Hash": "OnAlH23DB3qhpl8z7rVQzg9YUpzgsHyLXnbVxdjZNMM=",
   "Source": "Gym",
   "BasePath": "_content/Gym",
   "Mode": "Default",
@@ -395,12 +395,12 @@
       "OriginalItemSpec": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\obj\\Debug\\net9.0\\compressed\\8r98yvrv3v-cabbb8vli7.gz",
+      "Identity": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\obj\\Debug\\net9.0\\compressed\\8r98yvrv3v-x6ablydv6p.gz",
       "SourceId": "Gym",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Gym",
-      "RelativePath": "css/site#[.{fingerprint=cabbb8vli7}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=x6ablydv6p}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -409,8 +409,8 @@
       "RelatedAsset": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "97a9r7x140",
-      "Integrity": "G533RGn0k8rlqwIvL18VNBsNBwFnFty+d5dl3jpTvQM=",
+      "Fingerprint": "jfipwa8rkv",
+      "Integrity": "cQ5mNYrJX7eXTbnII89O9enICHXyukHRqEpbI7Kb3a8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\css\\site.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "cabbb8vli7",
-      "Integrity": "5EgTEmYZTVk5juU3oASmPy8ujZVSbnytu5wALFWAcRY=",
+      "Fingerprint": "x6ablydv6p",
+      "Integrity": "WZWD1oNmljlU0jw+8AT1O0kBYhAZc7UV25y72U8tzXU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1445,12 +1445,96 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\logo.png",
+      "Identity": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\2.jpg",
       "SourceId": "Gym",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\",
       "BasePath": "_content/Gym",
-      "RelativePath": "images/logo#[.{fingerprint}]?.png",
+      "RelativePath": "images/2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ddy9uib4vi",
+      "Integrity": "QSy9KDAWpfoMYp104jYrzCUfCwqHCCRBUeoJaPYOv6o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\3.jpg",
+      "SourceId": "Gym",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\",
+      "BasePath": "_content/Gym",
+      "RelativePath": "images/3#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wtalxxgp3r",
+      "Integrity": "7LAv6odCX6veS7xPuI3VDxuagmNsV1OFqP8kV5g/PgE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\5.jpg",
+      "SourceId": "Gym",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\",
+      "BasePath": "_content/Gym",
+      "RelativePath": "images/5#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "02u6r9dtm3",
+      "Integrity": "WFNkqeWDYRT+vQjiftnaPZj1CLLCmHuyBkMedETQ9Is=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\5.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\logo-black.png",
+      "SourceId": "Gym",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\",
+      "BasePath": "_content/Gym",
+      "RelativePath": "images/logo-black#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3qvxm7z0qc",
+      "Integrity": "JV8QJ8fMTxfs72iH/Meh4+v3Pk3L1kbTIq1na1xpvn4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo-black.png"
+    },
+    {
+      "Identity": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\logo-white.png",
+      "SourceId": "Gym",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\",
+      "BasePath": "_content/Gym",
+      "RelativePath": "images/logo-white#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1463,28 +1547,7 @@
       "Integrity": "KRIgsgfuBk+qHv+2As5d13TMwHxV/HAJcKB+DdZO6AA=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\logo.png"
-    },
-    {
-      "Identity": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\wallPaper.jpg",
-      "SourceId": "Gym",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\",
-      "BasePath": "_content/Gym",
-      "RelativePath": "images/wallPaper#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "92pal0zroj",
-      "Integrity": "YcLl6Wx59MlqXlIAtK2dl9oXe5cABaV2vakp6IM/Lko=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\wallPaper.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\logo-white.png"
     },
     {
       "Identity": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\js\\site.js",
@@ -2770,13 +2833,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.cabbb8vli7.css",
-      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\obj\\Debug\\net9.0\\compressed\\8r98yvrv3v-cabbb8vli7.gz",
+      "Route": "css/site.css",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\obj\\Debug\\net9.0\\compressed\\8r98yvrv3v-x6ablydv6p.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002631578947"
+          "Quality": "0.003125000000"
         }
       ],
       "ResponseHeaders": [
@@ -2786,19 +2849,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "379"
+          "Value": "319"
         },
         {
           "Name": "ETag",
-          "Value": "\"G533RGn0k8rlqwIvL18VNBsNBwFnFty+d5dl3jpTvQM=\""
+          "Value": "\"cQ5mNYrJX7eXTbnII89O9enICHXyukHRqEpbI7Kb3a8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 18:24:16 GMT"
+          "Value": "Tue, 14 Oct 2025 18:40:47 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -2814,26 +2877,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"5EgTEmYZTVk5juU3oASmPy8ujZVSbnytu5wALFWAcRY=\""
+          "Value": "W/\"WZWD1oNmljlU0jw+8AT1O0kBYhAZc7UV25y72U8tzXU=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "cabbb8vli7"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-5EgTEmYZTVk5juU3oASmPy8ujZVSbnytu5wALFWAcRY="
+          "Value": "sha256-WZWD1oNmljlU0jw+8AT1O0kBYhAZc7UV25y72U8tzXU="
         }
       ]
     },
     {
-      "Route": "css/site.cabbb8vli7.css",
+      "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2843,7 +2898,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "803"
+          "Value": "657"
         },
         {
           "Name": "Content-Type",
@@ -2851,11 +2906,156 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"5EgTEmYZTVk5juU3oASmPy8ujZVSbnytu5wALFWAcRY=\""
+          "Value": "\"WZWD1oNmljlU0jw+8AT1O0kBYhAZc7UV25y72U8tzXU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 18:24:16 GMT"
+          "Value": "Tue, 14 Oct 2025 18:40:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WZWD1oNmljlU0jw+8AT1O0kBYhAZc7UV25y72U8tzXU="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css.gz",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\obj\\Debug\\net9.0\\compressed\\8r98yvrv3v-x6ablydv6p.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "319"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cQ5mNYrJX7eXTbnII89O9enICHXyukHRqEpbI7Kb3a8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 18:40:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cQ5mNYrJX7eXTbnII89O9enICHXyukHRqEpbI7Kb3a8="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.x6ablydv6p.css",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\obj\\Debug\\net9.0\\compressed\\8r98yvrv3v-x6ablydv6p.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.003125000000"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "319"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cQ5mNYrJX7eXTbnII89O9enICHXyukHRqEpbI7Kb3a8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 18:40:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"WZWD1oNmljlU0jw+8AT1O0kBYhAZc7UV25y72U8tzXU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x6ablydv6p"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WZWD1oNmljlU0jw+8AT1O0kBYhAZc7UV25y72U8tzXU="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.x6ablydv6p.css",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "657"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WZWD1oNmljlU0jw+8AT1O0kBYhAZc7UV25y72U8tzXU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 18:40:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2865,7 +3065,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "cabbb8vli7"
+          "Value": "x6ablydv6p"
         },
         {
           "Name": "label",
@@ -2873,13 +3073,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-5EgTEmYZTVk5juU3oASmPy8ujZVSbnytu5wALFWAcRY="
+          "Value": "sha256-WZWD1oNmljlU0jw+8AT1O0kBYhAZc7UV25y72U8tzXU="
         }
       ]
     },
     {
-      "Route": "css/site.cabbb8vli7.css.gz",
-      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\obj\\Debug\\net9.0\\compressed\\8r98yvrv3v-cabbb8vli7.gz",
+      "Route": "css/site.x6ablydv6p.css.gz",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\obj\\Debug\\net9.0\\compressed\\8r98yvrv3v-x6ablydv6p.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2888,7 +3088,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "379"
+          "Value": "319"
         },
         {
           "Name": "Content-Type",
@@ -2896,11 +3096,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"G533RGn0k8rlqwIvL18VNBsNBwFnFty+d5dl3jpTvQM=\""
+          "Value": "\"cQ5mNYrJX7eXTbnII89O9enICHXyukHRqEpbI7Kb3a8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 18:24:16 GMT"
+          "Value": "Tue, 14 Oct 2025 18:40:47 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2918,7 +3118,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "cabbb8vli7"
+          "Value": "x6ablydv6p"
         },
         {
           "Name": "label",
@@ -2926,144 +3126,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-G533RGn0k8rlqwIvL18VNBsNBwFnFty+d5dl3jpTvQM="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\obj\\Debug\\net9.0\\compressed\\8r98yvrv3v-cabbb8vli7.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.002631578947"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "379"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"G533RGn0k8rlqwIvL18VNBsNBwFnFty+d5dl3jpTvQM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 18:24:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"5EgTEmYZTVk5juU3oASmPy8ujZVSbnytu5wALFWAcRY=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-5EgTEmYZTVk5juU3oASmPy8ujZVSbnytu5wALFWAcRY="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "803"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"5EgTEmYZTVk5juU3oASmPy8ujZVSbnytu5wALFWAcRY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 18:24:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-5EgTEmYZTVk5juU3oASmPy8ujZVSbnytu5wALFWAcRY="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\obj\\Debug\\net9.0\\compressed\\8r98yvrv3v-cabbb8vli7.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "379"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"G533RGn0k8rlqwIvL18VNBsNBwFnFty+d5dl3jpTvQM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 18:24:16 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-G533RGn0k8rlqwIvL18VNBsNBwFnFty+d5dl3jpTvQM="
+          "Value": "sha256-cQ5mNYrJX7eXTbnII89O9enICHXyukHRqEpbI7Kb3a8="
         }
       ]
     },
@@ -3962,8 +4025,336 @@
       ]
     },
     {
-      "Route": "images/logo.f6vkzgtk40.png",
-      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\logo.png",
+      "Route": "images/2.ddy9uib4vi.jpg",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "87471"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QSy9KDAWpfoMYp104jYrzCUfCwqHCCRBUeoJaPYOv6o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 18:57:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ddy9uib4vi"
+        },
+        {
+          "Name": "label",
+          "Value": "images/2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QSy9KDAWpfoMYp104jYrzCUfCwqHCCRBUeoJaPYOv6o="
+        }
+      ]
+    },
+    {
+      "Route": "images/2.jpg",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "87471"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QSy9KDAWpfoMYp104jYrzCUfCwqHCCRBUeoJaPYOv6o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 18:57:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QSy9KDAWpfoMYp104jYrzCUfCwqHCCRBUeoJaPYOv6o="
+        }
+      ]
+    },
+    {
+      "Route": "images/3.jpg",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "80663"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7LAv6odCX6veS7xPuI3VDxuagmNsV1OFqP8kV5g/PgE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 19:06:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7LAv6odCX6veS7xPuI3VDxuagmNsV1OFqP8kV5g/PgE="
+        }
+      ]
+    },
+    {
+      "Route": "images/3.wtalxxgp3r.jpg",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "80663"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7LAv6odCX6veS7xPuI3VDxuagmNsV1OFqP8kV5g/PgE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 19:06:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wtalxxgp3r"
+        },
+        {
+          "Name": "label",
+          "Value": "images/3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7LAv6odCX6veS7xPuI3VDxuagmNsV1OFqP8kV5g/PgE="
+        }
+      ]
+    },
+    {
+      "Route": "images/5.02u6r9dtm3.jpg",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76073"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WFNkqeWDYRT+vQjiftnaPZj1CLLCmHuyBkMedETQ9Is=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 19:03:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "02u6r9dtm3"
+        },
+        {
+          "Name": "label",
+          "Value": "images/5.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WFNkqeWDYRT+vQjiftnaPZj1CLLCmHuyBkMedETQ9Is="
+        }
+      ]
+    },
+    {
+      "Route": "images/5.jpg",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76073"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WFNkqeWDYRT+vQjiftnaPZj1CLLCmHuyBkMedETQ9Is=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 19:03:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WFNkqeWDYRT+vQjiftnaPZj1CLLCmHuyBkMedETQ9Is="
+        }
+      ]
+    },
+    {
+      "Route": "images/logo-black.3qvxm7z0qc.png",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\logo-black.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41774"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JV8QJ8fMTxfs72iH/Meh4+v3Pk3L1kbTIq1na1xpvn4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 18:37:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3qvxm7z0qc"
+        },
+        {
+          "Name": "label",
+          "Value": "images/logo-black.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JV8QJ8fMTxfs72iH/Meh4+v3Pk3L1kbTIq1na1xpvn4="
+        }
+      ]
+    },
+    {
+      "Route": "images/logo-black.png",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\logo-black.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41774"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JV8QJ8fMTxfs72iH/Meh4+v3Pk3L1kbTIq1na1xpvn4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Oct 2025 18:37:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JV8QJ8fMTxfs72iH/Meh4+v3Pk3L1kbTIq1na1xpvn4="
+        }
+      ]
+    },
+    {
+      "Route": "images/logo-white.f6vkzgtk40.png",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\logo-white.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3998,7 +4389,7 @@
         },
         {
           "Name": "label",
-          "Value": "images/logo.png"
+          "Value": "images/logo-white.png"
         },
         {
           "Name": "integrity",
@@ -4007,8 +4398,8 @@
       ]
     },
     {
-      "Route": "images/logo.png",
-      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\logo.png",
+      "Route": "images/logo-white.png",
+      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\logo-white.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -4040,88 +4431,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-KRIgsgfuBk+qHv+2As5d13TMwHxV/HAJcKB+DdZO6AA="
-        }
-      ]
-    },
-    {
-      "Route": "images/wallPaper.92pal0zroj.jpg",
-      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\wallPaper.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "44298"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"YcLl6Wx59MlqXlIAtK2dl9oXe5cABaV2vakp6IM/Lko=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 18:00:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "92pal0zroj"
-        },
-        {
-          "Name": "label",
-          "Value": "images/wallPaper.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-YcLl6Wx59MlqXlIAtK2dl9oXe5cABaV2vakp6IM/Lko="
-        }
-      ]
-    },
-    {
-      "Route": "images/wallPaper.jpg",
-      "AssetFile": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\wwwroot\\images\\wallPaper.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "44298"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"YcLl6Wx59MlqXlIAtK2dl9oXe5cABaV2vakp6IM/Lko=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 14 Oct 2025 18:00:20 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-YcLl6Wx59MlqXlIAtK2dl9oXe5cABaV2vakp6IM/Lko="
         }
       ]
     },
