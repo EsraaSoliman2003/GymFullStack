@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\جتهب\\Gym\\Gym\\Gym.csproj": {}
+    "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\Gym.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\جتهب\\Gym\\Gym\\Gym.csproj": {
+    "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\Gym.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\جتهب\\Gym\\Gym\\Gym.csproj",
+        "projectUniqueName": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\Gym.csproj",
         "projectName": "Gym",
-        "projectPath": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\جتهب\\Gym\\Gym\\Gym.csproj",
+        "projectPath": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\Gym.csproj",
         "packagesPath": "C:\\Users\\Esraa Soliman\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\جتهب\\Gym\\Gym\\obj\\",
+        "outputPath": "C:\\Users\\Esraa Soliman\\OneDrive - FEE-MU\\Desktop\\رواد مصر الرقميه\\Graduation Project\\GymFullStack\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
