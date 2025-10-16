@@ -29,15 +29,13 @@
             </div>
 
             <div class="mb-4 position-relative">
-                <label class="form-label">Password</label>
-                <div class="input-group">
-                    <input type="password" name="password" id="password" class="form-control rounded-pill px-3 py-2" required />
-                    <button type="button" class="btn btn-outline-secondary position-absolute end-0 top-0 mt-1 me-2 rounded-circle"
-                            id="togglePassword" style="border: none; background: transparent;">
-                        <i class="bi bi-eye-fill text-warning fs-5"></i>
-                    </button>
+                <label class="form-label fw-semibold">Password</label>
+                <div class="position-relative">
+                    <input type="password" name="password" id="password" class="form-control rounded-pill px-3 py-2 pe-5" placeholder="Enter your password" required />
+                    <i id="togglePassword" class="bi bi-eye-fill text-warning fs-5 position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer;"></i>
                 </div>
             </div>
+
             <button type="submit" class="btn btn-warning w-100 rounded-pill fw-bold py-2 shadow-sm">
                 Register
             </button>
@@ -49,3 +47,23 @@
         </p>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        // Function to toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const passwordInput = document.getElementById('password');
+            const icon = this;
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('bi-eye-fill');
+                icon.classList.add('bi-eye-slash-fill');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('bi-eye-slash-fill');
+                icon.classList.add('bi-eye-fill');
+            }
+        });
+    </script>
+}

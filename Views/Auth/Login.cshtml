@@ -16,53 +16,55 @@
         }
 
         <form asp-action="Login" method="post">
-
             <div class="mb-3">
-                <label class="form-label">Username</label>
-                <input type="text" name="username" class="form-control rounded-pill px-3 py-2" required />
+                <label class="form-label fw-semibold">Username</label>
+                <input type="text" name="username" class="form-control rounded-pill px-3 py-2"
+                       placeholder="Enter your username" required />
             </div>
-
 
             <div class="mb-4 position-relative">
-                <label class="form-label">Password</label>
-                <div class="input-group">
-                    <input type="password" name="password" id="password" class="form-control rounded-pill px-3 py-2" required />
-                    <button type="button" class="btn btn-outline-secondary position-absolute end-0 top-0 mt-1 me-2 rounded-circle"
-                            id="togglePassword" style="border: none; background: transparent;">
-                        <i class="bi bi-eye-fill text-warning fs-5"></i>
-                    </button>
+                <label class="form-label fw-semibold">Password</label>
+                <div class="position-relative">
+                    <input type="password" name="password" id="password"
+                           class="form-control rounded-pill px-3 py-2 pe-5"
+                           placeholder="Enter your password" required />
+                    <i id="togglePassword"
+                       class="bi bi-eye-fill text-warning fs-5 position-absolute top-50 end-0 translate-middle-y me-3"
+                       style="cursor: pointer;"></i>
                 </div>
             </div>
-
 
             <button type="submit" class="btn btn-warning w-100 rounded-pill fw-bold py-2 shadow-sm">
                 Login
             </button>
         </form>
 
-        <p class="text-center mt-4">
+        <div class="text-center mt-3">
+            <a asp-action="ForgotPassword" asp-controller="Auth"
+               class="text-warning text-decoration-none fw-bold">
+                Forgot your password?
+            </a>
+        </div>
+
+        <p class="text-center mt-3">
             Don't have an account?
             <a asp-action="Register" class="text-warning text-decoration-none fw-bold">Register here</a>
         </p>
-
-        <p class="text-center mt-3">
-            <a asp-action="ForgotPassword" class="text-warning text-decoration-none fw-bold">Forgot your password?</a>
-        </p>
-
-
-        <script>
-            // toggle password visibility
-            document.getElementById('togglePassword').addEventListener('click', function () {
-                const passwordInput = document.getElementById('password');
-                const icon = this.querySelector('i');
-                const isHidden = passwordInput.getAttribute('type') === 'password';
-
-                passwordInput.setAttribute('type', isHidden ? 'text' : 'password');
-                icon.classList.toggle('bi-eye-fill');
-                icon.classList.toggle('bi-eye-slash-fill');
-            });
-        </script>
-
-
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("password");
+
+        togglePassword.addEventListener("click", function () {
+            const isPassword = passwordInput.type === "password";
+            passwordInput.type = isPassword ? "text" : "password";
+
+            // Change icon
+            this.classList.toggle("bi-eye-fill", !isPassword);
+            this.classList.toggle("bi-eye-slash-fill", isPassword);
+        });
+    </script>
+}

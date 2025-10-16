@@ -21,7 +21,7 @@ namespace Gym.Controllers
         [HttpPost]
         public IActionResult Register(User user)
         {
-            // التحقق من أن اليوزرنيم غير مستخدم بالفعل
+
             var existingUser = _context.Users.FirstOrDefault(u => u.Username == user.Username);
             if (existingUser != null)
             {
@@ -29,11 +29,11 @@ namespace Gym.Controllers
                 return View(user);
             }
 
-            // حفظ المستخدم الجديد
+     
             _context.Users.Add(user);
             _context.SaveChanges();
 
-            // بعد التسجيل الناجح نوجهه لصفحة اللوجن
+        
             return RedirectToAction("Login");
         }
 
@@ -55,8 +55,6 @@ namespace Gym.Controllers
                 return View();
             }
 
-            // لو عايزة ممكن تحفظي اليوزر في session
-            // HttpContext.Session.SetString("Username", user.Username);
 
             return RedirectToAction("Index", "Home");
         }
@@ -66,6 +64,27 @@ namespace Gym.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ForgotPassword(ForgotPasswordViewModel model)
+        {
+            if (string.IsNullOrEmpty(model.EmailOrPhone))
+            {
+                ModelState.AddModelError("", "Please enter your email or phone number.");
+                return View(model);
+            }
+
+            ViewBag.Message = "A reset link has been sent if the account exists.";
+
+            return View();
+        }
+
 
 
     }
