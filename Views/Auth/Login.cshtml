@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="vh-100 d-flex align-items-center justify-content-center text-white"
+     style="background: linear-gradient(115deg, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0.5) 90%),
+            url('/images/bg.jpg') no-repeat center center / cover;">
+
+    <div class="bg-dark bg-opacity-75 p-5 rounded-4 shadow-lg" style="width: 400px;">
+
+        <h2 class="text-center mb-4 fw-bold" style="color:#ffc107;">Login</h2>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger text-center py-2">@ViewBag.Error</div>
+        }
+
+        <form asp-action="Login" method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" name="username" class="form-control rounded-pill px-3 py-2" required />
+            </div>
+
+
+            <div class="mb-4 position-relative">
+                <label class="form-label">Password</label>
+                <div class="input-group">
+                    <input type="password" name="password" id="password" class="form-control rounded-pill px-3 py-2" required />
+                    <button type="button" class="btn btn-outline-secondary position-absolute end-0 top-0 mt-1 me-2 rounded-circle"
+                            id="togglePassword" style="border: none; background: transparent;">
+                        <i class="bi bi-eye-fill text-warning fs-5"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-warning w-100 rounded-pill fw-bold py-2 shadow-sm">
+                Login
+            </button>
+        </form>
+
+        <p class="text-center mt-4">
+            Don't have an account?
+            <a asp-action="Register" class="text-warning text-decoration-none fw-bold">Register here</a>
+        </p>
+
+        <p class="text-center mt-3">
+            <a asp-action="ForgotPassword" class="text-warning text-decoration-none fw-bold">Forgot your password?</a>
+        </p>
+
+
+        <script>
+            // toggle password visibility
+            document.getElementById('togglePassword').addEventListener('click', function () {
+                const passwordInput = document.getElementById('password');
+                const icon = this.querySelector('i');
+                const isHidden = passwordInput.getAttribute('type') === 'password';
+
+                passwordInput.setAttribute('type', isHidden ? 'text' : 'password');
+                icon.classList.toggle('bi-eye-fill');
+                icon.classList.toggle('bi-eye-slash-fill');
+            });
+        </script>
+
+
+    </div>
+</div>

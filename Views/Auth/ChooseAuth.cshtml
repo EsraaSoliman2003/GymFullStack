@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Join Our Gym";
+}
+
+<div class="d-flex justify-content-center align-items-center vh-100 bg-dark text-white">
+    <div class="text-center">
+        <h2 class="mb-4">Welcome to <span style="color:#ffc107;">Our Gym</span> 💪</h2>
+        <p class="mb-5">Do you already have an account?</p>
+
+        <div class="d-flex justify-content-center gap-3">
+            <a href="@Url.Action("Login", "Auth")" class="btn btn-warning btn-lg rounded-pill px-4">Yes, I have an account</a>
+            <a href="@Url.Action("Register", "Auth")" class="btn btn-outline-light btn-lg rounded-pill px-4">No, I’m new here</a>
+        </div>
+    </div>
+</div>

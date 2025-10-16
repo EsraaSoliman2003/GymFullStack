@@ -1,0 +1,51 @@
+﻿@model Gym.Models.User
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="vh-100 d-flex align-items-center justify-content-center text-white"
+     style="background: linear-gradient(115deg, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0.5) 90%),
+            url('/images/bg.jpg') no-repeat center center / cover;">
+
+    <div class="bg-dark bg-opacity-75 p-5 rounded-4 shadow-lg" style="width: 420px;">
+
+        <h2 class="text-center mb-4 fw-bold" style="color:#ffc107;">Create Account</h2>
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger text-center py-2">@ViewBag.Error</div>
+        }
+
+        <form asp-action="Register" method="post">
+            <div class="mb-3">
+                <label asp-for="Username" class="form-label fw-semibold"></label>
+                <input asp-for="Username" class="form-control rounded-pill px-3 py-2" placeholder="Enter your username" />
+                <span asp-validation-for="Username" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label fw-semibold"></label>
+                <input asp-for="Email" class="form-control rounded-pill px-3 py-2" placeholder="Enter your email" />
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <div class="mb-4 position-relative">
+                <label class="form-label">Password</label>
+                <div class="input-group">
+                    <input type="password" name="password" id="password" class="form-control rounded-pill px-3 py-2" required />
+                    <button type="button" class="btn btn-outline-secondary position-absolute end-0 top-0 mt-1 me-2 rounded-circle"
+                            id="togglePassword" style="border: none; background: transparent;">
+                        <i class="bi bi-eye-fill text-warning fs-5"></i>
+                    </button>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-warning w-100 rounded-pill fw-bold py-2 shadow-sm">
+                Register
+            </button>
+        </form>
+
+        <p class="text-center mt-4">
+            Already have an account?
+            <a asp-action="Login" class="text-warning text-decoration-none fw-bold">Login here</a>
+        </p>
+    </div>
+</div>
