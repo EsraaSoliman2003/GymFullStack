@@ -1,0 +1,47 @@
+# Visual Studio temporary files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+out/
+Debug/
+Release/
+
+# Rider / IntelliJ
+.idea/
+
+# Resharper
+_ReSharper*/
+
+# NuGet Packages
+*.nupkg
+packages/
+
+# Visual Studio Code
+.vscode/
+
+# ASP.NET / IIS
+*.log
+*.vspscc
+*.vssscc
+App_Data/
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+
+# Mac / Linux
+.DS_Store
+Thumbs.db
+
+# Other temporary files
+*.tmp
+*.cache
+*.bak
+*.swp
