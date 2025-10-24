@@ -49,15 +49,17 @@ namespace Gym.Controllers
         {
             var user = _context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
 
-            if (user == null)
+            if (user != null)
             {
-                ViewBag.Error = "Invalid username or password";
-                return View();
+                HttpContext.Session.SetString("Username", user.Username);
+                HttpContext.Session.SetString("Role", user.Role);
+                return RedirectToAction("Index", "Home");
             }
 
-
-            return RedirectToAction("Index", "Home");
+            ViewBag.Error = "Invalid username or password";
+            return View();
         }
+
 
 
         public IActionResult ChooseAuth()
@@ -83,6 +85,14 @@ namespace Gym.Controllers
             ViewBag.Message = "A reset link has been sent if the account exists.";
 
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Auth");
         }
 
 

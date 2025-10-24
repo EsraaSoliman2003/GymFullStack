@@ -65,23 +65,70 @@
 
                 <!-- Links -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    @{
+                        var role = Context.Session.GetString("Role");
+                    }
+
                     <ul class="navbar-nav align-items-lg-center">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Contact">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-auth ms-lg-3" asp-controller="Auth" asp-action="Login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-auth ms-lg-2" asp-controller="Auth" asp-action="Register">Register</a>
-                        </li>
+                        @if (role == "Admin")
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="About">About</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="Index">Trainees</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="Index">Trainers</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="Index">Classes</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="Index">Subscriptions</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Admin" asp-action="Index">Reports</a></li>
+                            <li class="nav-item">
+                                <form asp-controller="Auth" asp-action="Logout" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-auth ms-lg-3">Logout</button>
+                                </form>
+                            </li>
+
+                            
+                        }
+                        else if (role == "Trainer")
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="About">About</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Trainer" asp-action="Index">Profile</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Trainer" asp-action="Index">Classes</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Trainer" asp-action="Index">Schedule</a></li>
+                            <li class="nav-item">
+                                <form asp-controller="Auth" asp-action="Logout" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-auth ms-lg-3">Logout</button>
+                                </form>
+                            </li>
+
+                        }
+                        else if (role == "Trainee")
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="About">About</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Trainee" asp-action="Index">Profile</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Trainee" asp-action="Index">Explore Classes</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Trainee" asp-action="Index">Schedule</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Trainee" asp-action="Index">Available Subscriptions</a></li>
+                            <li class="nav-item">
+                                <form asp-controller="Auth" asp-action="Logout" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-auth ms-lg-3">Logout</button>
+                                </form>
+                            </li>
+
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="About">About</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
+                            <li class="nav-item"><a class="btn btn-auth ms-lg-3" asp-controller="Auth" asp-action="Login">Login</a></li>
+                            <li class="nav-item"><a class="btn btn-auth ms-lg-2" asp-controller="Auth" asp-action="Register">Register</a></li>
+                        }
                     </ul>
+
                 </div>
             </div>
         </nav>

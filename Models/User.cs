@@ -20,6 +20,9 @@ namespace Gym.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        [Required]
+        public string Role { get; set; } = "Trainee";
+
 
 
     }
