@@ -18,38 +18,38 @@ GymFullStack is a comprehensive web application designed for gym management, bui
 MyMvcProject/
 │
 ├── Controllers/
-│   ├── HomeController.cs            # Handles general pages (Home, About, Contact)
-│   ├── AccountController.cs         # Manages login and registration logic
-│   ├── AdminController.cs           # Admin dashboard and user management
-│   ├── TrainerController.cs         # Trainer dashboard and course management
-│   └── TraineeController.cs         # Trainee dashboard and course tracking
+│   ├── AdminController.cs
+│   ├── AuthController.cs
+│   ├── HomeController.cs
+│   ├── TraineeController.cs
+│   └── TrainerController.cs
 │
 ├── Models/
-│   ├── User.cs                      # Common user model (Id, Name, Email, Role, etc.)
-│   ├── LoginViewModel.cs            # ViewModel for login form
-│   └── RegisterViewModel.cs         # ViewModel for registration form
+│   ├── AppDbContext.cs                      # Common user model (Id, Name, Email, Role, etc.)
+│   ├── ErrorViewModel.cs            # ViewModel for login form
+│   ├── ForgotPasswordViewModel.cs         # ViewModel for registration form
+│   └── User.cs                      # Common user model (Id, Name, Email, Role, etc.)
 │
 ├── Views/
-│   ├── Home/
-│   │   ├── Index.cshtml             # Main landing page
-│   │   ├── About.cshtml             # About page
-│   │   └── Contact.cshtml           # Contact page
-│   ├── Account/
-│   │   ├── Login.cshtml             # Login page
-│   │   └── Register.cshtml          # Registration page
 │   ├── Admin/
-│   │   ├── Index.cshtml             # Admin dashboard
-│   │   ├── ManageUsers.cshtml       # User management page (placeholder)
-│   │   └── Reports.cshtml           # Reports page (placeholder)
-│   ├── Trainer/
-│   │   ├── Index.cshtml             # Trainer dashboard
-│   │   └── Courses.cshtml           # Course management page (placeholder)
+│   │   └── Index.cshtml
+│   ├── Auth/
+│   │   ├── ChooseAuth.cshtml
+│   │   ├── ForgotPassword.cshtml
+│   │   ├── Login.cshtml
+│   │   └── Register.cshtml
+│   ├── Home/
+│   │   ├── About.cshtml
+│   │   ├── Contact.cshtml
+│   │   ├── Index.cshtml
+│   │   └── Privacy.cshtml
+│   ├── Shared/
+│   │   ├── _Layout.cshtml
+│   │   └── _Layout.cshtml.css
 │   ├── Trainee/
-│   │   ├── Index.cshtml             # Trainee dashboard
-│   │   └── MyCourses.cshtml         # Trainee course tracking (placeholder)
-│   └── Shared/
-│       ├── _Layout.cshtml           # Shared layout for consistent UI
-│       └── _ViewStart.cshtml        # Sets default layout
+│   │   └── Index.cshtml
+│   └── Trainer/
+│       └── Index.cshtml
 │
 ├── wwwroot/ (ASP.NET Core)
 │   ├── css/
@@ -57,7 +57,7 @@ MyMvcProject/
 │   ├── js/
 │   │   └── site.js                  # Custom JavaScript
 │   └── lib/                         # External libraries (Bootstrap, jQuery)
-│
+├── README.md
 ├── appsettings.json                 # Configuration for ASP.NET Core
 └── Program.cs                       # Entry point for ASP.NET Core
 ```
