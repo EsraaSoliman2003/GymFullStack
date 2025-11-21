@@ -94,6 +94,35 @@ namespace Gym.Controllers
             HttpContext.Session.Clear();
             return RedirectToAction("Login", "Auth");
         }
+        [HttpPost]
+        [HttpPost]
+        public IActionResult LoginForAdmin(string username, string password)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
+
+            if (user != null)
+            {
+                HttpContext.Session.SetString("Username", user.Username);
+                HttpContext.Session.SetString("Role", user.Role);
+
+                // Redirect حسب الدور
+                if (user.Role == "Admin")
+                {
+                    return RedirectToAction("Index", "Admin"); // Admin Dashboard
+                }
+                else if (user.Role == "Trainer")
+                {
+                    return RedirectToAction("Index", "Trainers");
+                }
+                else // Trainee
+                {
+                    return RedirectToAction("Index", "Trainees");
+                }
+            }
+
+            ViewBag.Error = "Invalid username or password";
+            return View();
+        }
 
 
 

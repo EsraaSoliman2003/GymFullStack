@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Reports";
+}
+
+<div class="vh-100 p-5 text-white" style="background: linear-gradient(115deg, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 80%), url('/images/bg.jpg') no-repeat center right / cover; overflow-y:auto;">
+
+    <h1 class="display-4 mb-4" style="text-shadow: 2px 2px 15px rgba(0,0,0,0.6);">Gym Reports</h1>
+
+    <div class="row g-4">
+
+        <!-- Users Card -->
+        <div class="col-md-3">
+            <div class="card text-white bg-warning shadow-lg">
+                <div class="card-body">
+                    <h5 class="card-title">Total Users</h5>
+                    <p class="card-text fs-4">@ViewBag.TotalUsers</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trainers Card -->
+        <div class="col-md-3">
+            <div class="card text-white bg-warning shadow-lg">
+                <div class="card-body">
+                    <h5 class="card-title">Total Trainers</h5>
+                    <p class="card-text fs-4">@ViewBag.TotalTrainers</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trainees Card -->
+        <div class="col-md-3">
+            <div class="card text-white bg-warning shadow-lg">
+                <div class="card-body">
+                    <h5 class="card-title">Total Trainees</h5>
+                    <p class="card-text fs-4">@ViewBag.TotalTrainees</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder for future stats -->
+        <div class="col-md-3">
+            <div class="card text-white bg-dark shadow-lg">
+                <div class="card-body">
+                    <h5 class="card-title">Other Stats</h5>
+                    <p class="card-text fs-5">Coming Soon...</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <hr class="my-5 border-light">
+
+    <p class="fs-5 text-white-50">Use this page to monitor the gym's statistics and get insights about users, trainers, and trainees.</p>
+
+</div>

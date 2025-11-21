@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Gym.Models.User>
+@{
+    ViewData["Title"] = "Manage Trainees";
+}
+
+<div class="vh-100 position-relative text-white"
+     style="background: linear-gradient(115deg, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 80%),
+            url('/images/bg.jpg') no-repeat center right / cover;
+            overflow: hidden;">
+
+    <!-- Yellow blur effect -->
+    <div style="position:absolute; top:0; right:-100px; width:450px; height:100%;
+                background: radial-gradient(circle at 30% 50%, rgba(255, 193, 7, 0.25), transparent 75%);
+                filter: blur(50px); opacity: 0.8;"></div>
+
+    <!-- Main content container -->
+    <div class="container py-5" style="position: relative; z-index:2;">
+
+        <h2 class="mb-4 text-warning fw-bold text-center">Manage Trainees</h2>
+
+        <div class="mb-4 text-center">
+            <a href="@Url.Action("Create")" class="btn btn-warning fw-bold px-4 py-2">Add New Trainee</a>
+        </div>
+
+        <div class="table-responsive shadow-lg rounded">
+            <table class="table table-dark table-striped table-bordered align-middle text-center">
+                <thead class="table-warning text-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var trainee in Model)
+                    {
+                        <tr>
+                            <td>@trainee.Id</td>
+                            <td>@trainee.Username</td>
+                            <td>@trainee.Email</td>
+                            <td class="d-flex justify-content-center gap-2">
+                                <a href="@Url.Action("Edit", new { id = trainee.Id })" class="btn btn-sm btn-primary">Edit</a>
+
+                                <form asp-action="DeleteConfirmed" method="post" style="display:inline;">
+                                    <input type="hidden" name="id" value="@trainee.Id" />
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?');">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .table thead {
+        background-color: rgba(255, 193, 7, 0.9) !important;
+        color: #000 !important;
+    }
+
+    .table tbody tr:hover {
+        background-color: rgba(255, 193, 7, 0.2);
+        transition: background 0.3s;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+        color: #000;
+        font-weight: 600;
+    }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+            border-color: #d39e00;
+            color: #000;
+        }
+
+    .btn-primary {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+    }
+
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            border-color: #0a58ca;
+        }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+        .btn-danger:hover {
+            background-color: #bb2d3b;
+            border-color: #b02a37;
+        }
+
+    .table-responsive {
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    h2 {
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+</style>

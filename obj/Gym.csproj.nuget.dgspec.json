@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Depi\\technical\\GymFullStack\\Gym.csproj": {}
+    "D:\\Depi\\graduation project\\GymFullStack\\Gym.csproj": {}
   },
   "projects": {
-    "D:\\Depi\\technical\\GymFullStack\\Gym.csproj": {
+    "D:\\Depi\\graduation project\\GymFullStack\\Gym.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Depi\\technical\\GymFullStack\\Gym.csproj",
+        "projectUniqueName": "D:\\Depi\\graduation project\\GymFullStack\\Gym.csproj",
         "projectName": "Gym",
-        "projectPath": "D:\\Depi\\technical\\GymFullStack\\Gym.csproj",
+        "projectPath": "D:\\Depi\\graduation project\\GymFullStack\\Gym.csproj",
         "packagesPath": "C:\\Users\\Aya_A\\.nuget\\packages\\",
-        "outputPath": "D:\\Depi\\technical\\GymFullStack\\obj\\",
+        "outputPath": "D:\\Depi\\graduation project\\GymFullStack\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,3 +1,50 @@
-﻿<body style="background-color: black; color: white;">
-    <h2>Welcome @Context.Session.GetString("Role")</h2>
-</body>
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="d-flex vh-100" style="background: linear-gradient(115deg, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 80%), url('/images/bg.jpg') no-repeat center right / cover;">
+
+    <!-- Sidebar -->
+    <nav class="d-flex flex-column flex-shrink-0 p-3 text-white" style="width: 250px; background-color: rgba(0,0,0,0.7);">
+        <a href="@Url.Action("Index", "Admin")" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-4 fw-bold">Gym Admin</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "Users")" class="nav-link text-white">
+                    Manage Users
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "ManageTrainers")" class="nav-link text-white">
+                    Manage Trainers
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index", "ManageTrainees")" class="nav-link text-white">
+                    Manage Trainees
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Reports", "Admin")" class="nav-link text-white">
+                    View Reports
+                </a>
+            </li>
+        </ul>
+        <hr>
+      
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex-grow-1 p-4 d-flex justify-content-center align-items-center" style="overflow-y: auto; min-height: 100vh;">
+        <div class="text-center">
+            <h1 class="display-4 text-white mb-4">Welcome, Admin!</h1>
+            <p class="fs-5 text-white-50 mb-5">Use the sidebar to manage users, trainers, trainees, and view reports.</p>
+        </div>
+    </div>
+
+            </div>
+        </div>
+    </div>
+</div>

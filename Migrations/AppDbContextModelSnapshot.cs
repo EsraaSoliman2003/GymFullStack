@@ -31,19 +31,55 @@ namespace Gym.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.HasIndex("Username")
+                        .IsUnique();
+
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "admin@gym.com",
+                            Password = "admin123",
+                            Role = "Admin",
+                            Username = "admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "trainer@gym.com",
+                            Password = "trainer123",
+                            Role = "Trainer",
+                            Username = "trainer"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "trainee@gym.com",
+                            Password = "trainee123",
+                            Role = "Trainee",
+                            Username = "trainee"
+                        });
                 });
 #pragma warning restore 612, 618
         }

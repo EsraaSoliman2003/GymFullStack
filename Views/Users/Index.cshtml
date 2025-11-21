@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Gym.Models.User>
+@{
+    ViewData["Title"] = "Manage Users";
+}
+
+<div class="vh-100 position-relative text-white"
+     style="background: linear-gradient(115deg, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 80%),
+            url('/images/bg.jpg') no-repeat center right / cover;
+            overflow: auto; padding: 40px;">
+
+    <!-- Yellow blur effect -->
+    <div style="position:absolute; top:0; right:-100px; width:450px; height:100%;
+                background: radial-gradient(circle at 30% 50%, rgba(255, 193, 7, 0.25), transparent 75%);
+                filter: blur(50px); opacity: 0.8;"></div>
+
+    <!-- Content container -->
+    <div class="card p-4 shadow-lg" style="background-color: rgba(0,0,0,0.75); border-radius: 15px; z-index: 2;">
+        <h2 class="mb-4 text-warning text-center fw-bold">Manage Users</h2>
+
+        <a href="@Url.Action("Create")" class="btn btn-warning mb-3 fw-bold">Add New User</a>
+
+        <table class="table table-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.Username</td>
+                        <td>@user.Email</td>
+                        <td>@user.Role</td>
+                        <td>
+                            <a href="@Url.Action("Edit", new { id = user.Id })" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="@Url.Action("Delete", new { id = user.Id })" class="btn btn-sm btn-danger"
+                               onclick="return confirm('Are you sure?');">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+        color: #000;
+    }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+            border-color: #d39e00;
+            color: #000;
+        }
+
+    .btn-primary {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+    }
+
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            border-color: #0a58ca;
+        }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+    table {
+        background-color: transparent;
+        color: #fff;
+    }
+
+        table th, table td {
+            vertical-align: middle;
+        }
+</style>
