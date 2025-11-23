@@ -10,6 +10,11 @@ namespace Gym.Models
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Trainee> Trainees { get; set; }
+        public DbSet<Subscription> Subscriptions { get; set; }
+        public DbSet<DietPlan> DietPlans { get; set; }
+        public DbSet<WorkoutPlan> WorkoutPlans { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

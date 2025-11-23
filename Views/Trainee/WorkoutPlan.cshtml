@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Gym.Models.WorkoutPlan>
+
+@{
+    ViewData["Title"] = "My Workout Plan";
+
+    
+    var daysOrder = new List<string> { "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" };
+
+ 
+    var modelList = (Model ?? Enumerable.Empty<Gym.Models.WorkoutPlan>()).ToList();
+
+   
+    var groupedPlans = modelList
+        .GroupBy(p => p.DayOfWeek ?? "Unknown")
+        .Select(g => new
+        {
+            Day = g.Key,
+            Plans = g.ToList()
+        })
+        .OrderBy(g =>
+        {
+            var idx = daysOrder.IndexOf(g.Day);
+            return idx >= 0 ? idx : int.MaxValue;
+        })
+        .ToList();
+
+    string MakeSafeId(string s)
+    {
+      
+        var safe = System.Text.RegularExpressions.Regex.Replace(s ?? "day", @"[^\w]", "");
+        return "day_" + (string.IsNullOrWhiteSpace(safe) ? Guid.NewGuid().ToString("N") : safe);
+    }
+}
+
+<link rel="stylesheet" href="~/css/trainee-dashboard.css" />
+
+<div class="container dashboard-container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="display-5">My Workout Plan</h2>
+        <a asp-action="Dashboard" class="btn btn-outline-warning">
+            <i class="bi bi-arrow-left-circle me-2"></i>Back to Dashboard
+        </a>
+    </div>
+
+    @if (groupedPlans.Any())
+    {
+        <div class="accordion" id="workoutAccordion">
+            @foreach (var dayGroup in groupedPlans)
+            {
+                var isRestDay = !dayGroup.Plans.Any(ex => !string.IsNullOrWhiteSpace(ex.ExerciseName) && !ex.ExerciseName.Equals("rest", StringComparison.OrdinalIgnoreCase));
+                var collapseId = MakeSafeId(dayGroup.Day) + "_collapse";
+                var headerId = MakeSafeId(dayGroup.Day) + "_header";
+
+                <div class="accordion-item workout-accordion-item mb-3">
+                    <h2 class="accordion-header" id="@headerId">
+                        <button class="accordion-button collapsed workout-accordion-button" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#@collapseId"
+                                aria-expanded="false" aria-controls="@collapseId">
+                            @dayGroup.Day
+                            @if (isRestDay)
+                            {
+                                <span class="badge bg-success ms-3">Rest Day</span>
+                            }
+                        </button>
+                    </h2>
+
+                    <div id="@collapseId" class="accordion-collapse collapse" aria-labelledby="@headerId" data-bs-parent="#workoutAccordion">
+                        <div class="accordion-body workout-accordion-body">
+
+                            @if (isRestDay)
+                            {
+                                <p class="text-center fs-5 p-3">Take this day to recover!</p>
+                            }
+                            else
+                            {
+                                <div class="table-responsive">
+                                    <table class="table workout-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Exercise</th>
+                                                <th>Sets</th>
+                                                <th>Reps</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var plan in dayGroup.Plans.Where(p => !(p.ExerciseName ?? "").ToLower().Contains("rest")))
+                                            {
+                                                <tr>
+                                                    <td>@plan.ExerciseName</td>
+                                                    <td>@plan.Sets</td>
+                                                    <td>@plan.Reps</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert no-plan-alert" role="status" aria-live="polite">
+            <h4 class="alert-heading text-warning">No Plan Assigned</h4>
+            <p>Your workout plan has not been assigned yet. Please contact your trainer.</p>
+        </div>
+    }
+

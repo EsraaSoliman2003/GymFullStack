@@ -1,0 +1,43 @@
+﻿@model Gym.Models.Trainee
+@{
+    ViewData["Title"] = "Trainee Dashboard";
+}
+
+<link rel="stylesheet" href="~/css/trainee-dashboard.css" />
+
+<div class="container my-5">
+
+    <div class="text-center mb-5">
+        <h2 class="display-5">Welcome, @(Model.User?.Username ?? "Trainee")!</h2>
+        <p class="lead text-muted">This is your personal dashboard. Track your progress and manage your plans.</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-6">
+            @await Html.PartialAsync("Partials/_ProfileCard", Model)
+        </div>
+
+        <div class="col-lg-6">
+            @await Html.PartialAsync("Partials/_SubscriptionCard", Model)
+        </div>
+
+        <div class="col-md-6">
+            @await Html.PartialAsync("Partials/_WorkoutShortcut", Model)
+        </div>
+
+        <div class="col-md-6">
+            @await Html.PartialAsync("Partials/_DietShortcut", Model)
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+

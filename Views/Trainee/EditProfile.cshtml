@@ -1,0 +1,86 @@
+﻿@model Gym.Models.Trainee
+
+@{
+    ViewData["Title"] = "Edit Profile";
+
+    var goalOptions = new List<SelectListItem>
+    {
+        new() { Value = "Lose weight", Text = "Lose weight" },
+        new() { Value = "Build muscle", Text = "Build muscle" },
+        new() { Value = "Fitness", Text = "General Fitness" }
+    };
+}
+
+<link rel="stylesheet" href="~/css/trainee-dashboard.css" />
+
+<div class="container dashboard-container my-5">
+
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+
+            <h2 class="display-5 mb-4 text-warning">Edit Your Profile</h2>
+
+            <div class="card shadow-lg edit-card">
+                <div class="card-body p-4 p-md-5 text-light">
+
+                    <form asp-action="EditProfile" method="post">
+
+                        @Html.AntiForgeryToken()
+
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                        <!-- Read-only fields -->
+                        <fieldset disabled>
+
+                            <div class="mb-3">
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-control edit-readonly" value="@Model.User?.Username" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control edit-readonly" value="@Model.User?.Email" />
+                            </div>
+
+                        </fieldset>
+
+                        <hr class="border-warning my-4" />
+
+                        <!-- Editable fields -->
+                        <div class="mb-3">
+                            <label asp-for="Goal" class="form-label">Main Goal</label>
+                            <select asp-for="Goal" class="form-select edit-input" asp-items="goalOptions">
+                                <option value="">-- Select Your Goal --</option>
+                            </select>
+                            <span asp-validation-for="Goal" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="DateOfBirth" class="form-label">Date of Birth</label>
+                            <input asp-for="DateOfBirth" type="date" class="form-control edit-input"
+                                   value="@(Model.DateOfBirth.HasValue? Model.DateOfBirth.Value.ToString("yyyy-MM-dd") : "")" />
+                            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-warning btn-lg w-100 mb-2">Save Changes</button>
+                            <a asp-action="Dashboard" class="btn btn-outline-secondary w-100">Cancel</a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+

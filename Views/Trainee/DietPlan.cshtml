@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Gym.Models.DietPlan>
+
+@{
+    ViewData["Title"] = "My Diet Plan";
+
+  
+    var mealOrder = new List<string> { "Breakfast", "Lunch", "Dinner", "Snack", "Pre-Workout", "Post-Workout" };
+
+    var modelList = Model?.ToList() ?? new List<Gym.Models.DietPlan>();
+
+    var sortedMeals = modelList.OrderBy(m =>
+    {
+        var idx = mealOrder.IndexOf(m.MealType);
+        return idx >= 0 ? idx : int.MaxValue;
+    }).ThenBy(m => m.MealType).ToList();
+}
+
+<link rel="stylesheet" href="~/css/trainee-dashboard.css" />
+
+<div class="container dashboard-container my-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="display-5">My Diet Plan</h2>
+        <a asp-action="Dashboard" class="btn btn-outline-warning" aria-label="Back to dashboard">
+            <i class="bi bi-arrow-left-circle me-2" aria-hidden="true"></i>Back to Dashboard
+        </a>
+    </div>
+
+    @if (sortedMeals.Any())
+    {
+        <div class="row g-4">
+            @foreach (var meal in sortedMeals)
+            {
+               
+                var iconClass = meal.MealType switch
+                {
+                    "Breakfast" => "bi-brightness-high-fill",
+                    "Lunch" => "bi-sun-fill",
+                    "Dinner" => "bi-moon-stars-fill",
+                    "Snack" => "bi-basket-fill",
+                    "Pre-Workout" => "bi-lightning-charge-fill",
+                    "Post-Workout" => "bi-heart-pulse-fill",
+                    _ => "bi-egg-fried"
+                };
+
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow-lg meal-card">
+                        <div class="card-header d-flex align-items-center">
+                            <i class="bi @iconClass me-2 meal-icon" aria-hidden="true"></i>
+                            <strong class="meal-type">@meal.MealType</strong>
+                        </div>
+
+                        <div class="card-body">
+                            <p class="card-text meal-desc">@meal.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert no-plan-alert" role="status" aria-live="polite">
+            <h4 class="alert-heading text-warning">No Plan Assigned</h4>
+            <p>Your diet plan has not been assigned yet. Please contact your trainer.</p>
+        </div>
+    }
+</div>

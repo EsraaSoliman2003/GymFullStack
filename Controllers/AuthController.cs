@@ -29,11 +29,11 @@ namespace Gym.Controllers
                 return View(user);
             }
 
-     
+
             _context.Users.Add(user);
             _context.SaveChanges();
 
-        
+
             return RedirectToAction("Login");
         }
 
@@ -44,6 +44,23 @@ namespace Gym.Controllers
             return View();
         }
 
+        //[HttpPost]
+        //public IActionResult Login(string username, string password)
+        //{
+        //    var user = _context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
+
+        //    if (user != null)
+        //    {
+        //        HttpContext.Session.SetString("Username", user.Username);
+        //        HttpContext.Session.SetString("Role", user.Role);
+        //        return RedirectToAction("Index", "Home");
+        //    }
+
+        //    ViewBag.Error = "Invalid username or password";
+        //    return View();
+        //}
+
+
         [HttpPost]
         public IActionResult Login(string username, string password)
         {
@@ -53,6 +70,34 @@ namespace Gym.Controllers
             {
                 HttpContext.Session.SetString("Username", user.Username);
                 HttpContext.Session.SetString("Role", user.Role);
+                HttpContext.Session.SetInt32("UserId", user.Id);
+
+                // بعد كده نحاول نجيب الـ Trainee اللي تابع للمستخدم ده
+                if (user.Role == "Trainee")
+                {
+                    var trainee = _context.Trainees.FirstOrDefault(t => t.UserId == user.Id);
+
+                    if (trainee == null)
+                    {
+                        trainee = new Trainee
+                        {
+                            UserId = user.Id,
+                            Goal = "Fitness",
+                            DateOfBirth = null
+                        };
+
+                        _context.Trainees.Add(trainee);
+                        _context.SaveChanges();
+                    }
+
+                    return RedirectToAction("Dashboard", "Trainee", new { id = trainee.Id });
+                }
+
+                else if (user.Role == "Trainer")
+                {
+                    return RedirectToAction("Dashboard", "Trainer");
+                }
+
                 return RedirectToAction("Index", "Home");
             }
 

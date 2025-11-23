@@ -5,7 +5,7 @@ namespace Gym.Models
     public class User
     {
         public int Id { get; set; }
-
+        
         [Required]
         [Display(Name = "Username")]
         public string Username { get; set; }
@@ -23,7 +23,7 @@ namespace Gym.Models
         [Required]
         public string Role { get; set; } = "Trainee";
 
-
+      
 
     }
 }

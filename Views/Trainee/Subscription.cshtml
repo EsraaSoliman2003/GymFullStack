@@ -1,0 +1,62 @@
+﻿@model Gym.Models.Subscription
+
+@{
+    ViewData["Title"] = "My Subscription";
+}
+
+<link rel="stylesheet" href="~/css/trainee-dashboard.css" />
+
+<div class="container dashboard-container my-5">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="display-5">My Subscription</h2>
+        <a asp-action="Dashboard" class="btn btn-outline-warning">
+            <i class="bi bi-arrow-left-circle me-2"></i>Back to Dashboard
+        </a>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+
+            <div class="card shadow-lg subscription-card">
+                <div class="card-header subscription-header">
+                    <i class="bi bi-star-fill me-2"></i>
+                    Current Package Details
+                </div>
+
+                <div class="card-body p-4 text-light">
+
+                    <h3 class="card-title text-warning mb-3">@Model.PackageName</h3>
+
+                    <p class="subscription-desc mb-4">@Model.Description</p>
+
+                    <!-- Price / Duration -->
+                    <ul class="list-group list-group-flush subscription-list mb-4">
+                        <li class="list-group-item">
+                            <strong>Price:</strong>
+                            <span class="float-end">@Model.Price.ToString("C")</span>
+                        </li>
+
+                        <li class="list-group-item">
+                            <strong>Duration:</strong>
+                            <span class="float-end">@Model.Duration</span>
+                        </li>
+                    </ul>
+
+                    <div class="alert alert-dark border-secondary mt-4">
+                        <h5 class="alert-heading">
+                            <i class="bi bi-info-circle-fill me-2"></i>Manage Subscription
+                        </h5>
+                        <p>
+                            For renewals or cancellations, please visit the front desk or contact gym support.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,10 @@
+﻿@model Gym.Models.Trainee
+
+<div class="card h-100 shadow-lg text-center p-4">
+    <i class="bi bi-egg-fried dashboard-icon"></i>
+    <div class="card-body">
+        <h5 class="card-title mt-3">My Diet Plan</h5>
+        <p class="card-text text-muted">Check your daily meals and nutritional guide for optimal results.</p>
+        <a asp-action="DietPlan" asp-route-id="@Model.Id" class="btn btn-warning w-100">Go to Diet Plan</a>
+    </div>
+</div>

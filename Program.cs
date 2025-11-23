@@ -1,11 +1,17 @@
+using FluentValidation;
 using Gym.Models;
 using Microsoft.EntityFrameworkCore;
+using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Aya")));
-
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Esraa")));
+    
+builder.Services
+      .AddFluentValidationAutoValidation()
+      .AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

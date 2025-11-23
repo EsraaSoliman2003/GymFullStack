@@ -1,0 +1,10 @@
+﻿@model Gym.Models.Trainee
+
+<div class="card h-100 shadow-lg text-center p-4">
+    <i class="bi bi-clipboard2-pulse-fill dashboard-icon"></i>
+    <div class="card-body">
+        <h5 class="card-title mt-3">My Workout Plan</h5>
+        <p class="card-text text-muted">View your daily exercises, sets, and reps assigned by your trainer.</p>
+        <a asp-action="WorkoutPlan" asp-route-id="@Model.Id" class="btn btn-warning w-100">Go to Workout Plan</a>
+    </div>
+</div>

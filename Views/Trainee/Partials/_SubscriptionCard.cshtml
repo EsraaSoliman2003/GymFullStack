@@ -1,0 +1,37 @@
+﻿@model Gym.Models.Trainee
+
+<div class="card h-100 shadow-lg">
+    <div class="card-header">
+        <i class="bi bi-star-fill me-2"></i> Your Subscription
+    </div>
+
+    <div class="card-body">
+        @if (Model.Subscription != null)
+        {
+            <h5 class="card-title text-warning">@Model.Subscription.PackageName</h5>
+            <p class="card-text">@Model.Subscription.Description</p>
+
+            <ul class="list-group list-group-flush mt-3">
+                <li class="list-group-item bg-transparent border-secondary">
+                    <strong>Price:</strong> @Model.Subscription.Price.ToString("C")
+                </li>
+                <li class="list-group-item bg-transparent border-secondary">
+                    <strong>Duration:</strong> @Model.Subscription.Duration
+                </li>
+            </ul>
+
+            <a asp-action="Subscription" asp-route-id="@Model.Id" class="btn btn-outline-warning mt-3">
+                View Full Details
+            </a>
+        }
+        else
+        {
+            <div class="alert alert-dark border-warning">
+                <h5 class="alert-heading text-warning">No Active Subscription</h5>
+                <p>You currently don't have an active subscription.</p>
+                <a asp-action="AvailableSubscriptions" class="btn btn-warning">Explore Subscriptions</a>
+            </div>
+        }
+    </div>
+</div>
+
