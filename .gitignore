@@ -45,3 +45,41 @@ Thumbs.db
 *.cache
 *.bak
 *.swp
+# ===== BACKEND (.NET) =====
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.user
+*.vs
+appsettings.Development.json
+
+# Entity Framework Migrations temp files
+*Migrations/*.Designer.cs
+
+# Ignore build outputs
+bin/
+obj/
+
+# Visual Studio cache
+*.user
+*.suo
+*.cache
+*.log
+
+# ASP.NET static assets
+wwwroot/lib/
+
+# EF Migrations snapshots cache
+Migrations/*.csproj
+
+# Rider / VSCode
+.idea/
+.vscode/
+
+# OS
+Thumbs.db
+*.tmp
