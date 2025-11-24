@@ -88,17 +88,20 @@ namespace Gym.Controllers
         }
 
         // Subscription
+        [HttpGet]
         
         public async Task<IActionResult> Subscription(int id)
         {
-            var userId = HttpContext.Session.GetInt32("UserId");
-            if (userId == null) return RedirectToAction("Login", "Auth");
-
             var sub = await _context.Subscriptions
                 .Include(s => s.Trainee)
                 .FirstOrDefaultAsync(s => s.TraineeId == id);
 
-            if (sub == null) return NotFound();
+            if (sub == null)
+               return NotFoundView();
+          
+
+            var userId = HttpContext.Session.GetInt32("UserId");
+            if (userId == null) return RedirectToAction("Login", "Auth");
             if (sub.Trainee?.UserId != userId.Value) return Forbid();
 
             return View(sub);
@@ -181,6 +184,14 @@ namespace Gym.Controllers
 
             return View(traineeToUpdate);
         }
+
+        [NonAction]
+        private IActionResult NotFoundView()
+        {
+            Response.StatusCode = 404;
+            return View("NotFound");
+        }
+
 
 
 

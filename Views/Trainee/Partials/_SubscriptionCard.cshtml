@@ -19,19 +19,23 @@
                     <strong>Duration:</strong> @Model.Subscription.Duration
                 </li>
             </ul>
-
-            <a asp-action="Subscription" asp-route-id="@Model.Id" class="btn btn-outline-warning mt-3">
-                View Full Details
-            </a>
         }
         else
         {
             <div class="alert alert-dark border-warning">
                 <h5 class="alert-heading text-warning">No Active Subscription</h5>
                 <p>You currently don't have an active subscription.</p>
-                <a asp-action="AvailableSubscriptions" class="btn btn-warning">Explore Subscriptions</a>
+                <small class="text-muted d-block mb-2">You can still click "View Full Details" to see the subscription page (will return NotFound if none).</small>
             </div>
         }
+
+        <!--
+            نخلي الزر موجود دايماً ويروح لـ /Trainee/Subscription/{Model.Id}
+            الـ controller هيقرر يرجع View أو NotFound
+        -->
+        <a asp-action="Subscription" asp-route-id="@Model.Id" class="btn btn-outline-warning mt-3">
+            View Full Details
+        </a>
     </div>
 </div>
 
