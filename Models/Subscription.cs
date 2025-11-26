@@ -19,9 +19,10 @@ namespace Gym.Models
         
         [StringLength(200, ErrorMessage = "Description cannot exceed 200 characters")]
         public string Description { get; set; } = string.Empty;
-        [Required(ErrorMessage = "Trainee is required")]
+        //[Required(ErrorMessage = "Trainee is required")]
         public int TraineeId { get; set; }
-        public Trainee Trainee { get; set; } = default!;
+        //public Trainee Trainee { get; set; } = default!;
+        public Trainee? Trainee { get; set; }
 
     }
 }

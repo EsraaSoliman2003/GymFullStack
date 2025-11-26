@@ -1,0 +1,72 @@
+﻿@model Gym.Models.Subscription
+@{
+    ViewData["Title"] = "Edit Subscription";
+}
+
+<div class="vh-100 position-relative text-white"
+     style="background: linear-gradient(115deg, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 80%),
+             url('/images/bg.jpg') no-repeat center right / cover;
+             overflow: hidden;">
+
+    <div style="position:absolute; top:0; right:-100px; width:450px; height:100%;
+                background: radial-gradient(circle at 30% 50%, rgba(255, 193, 7, 0.25), transparent 75%);
+                filter: blur(50px); opacity: 0.8;"></div>
+
+    <div class="container py-5 d-flex justify-content-center align-items-center" style="position: relative; z-index:2;">
+
+        <div class="card bg-dark text-white p-4 shadow-lg" style="max-width: 600px; width: 100%; border: 2px solid #ffc107;">
+            
+            <h2 class="mb-4 text-warning fw-bold text-center">Edit Subscription Details</h2>
+
+            <form asp-action="Edit" method="post">
+                @Html.AntiForgeryToken()
+                
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                
+                <input type="hidden" asp-for="Id" /> 
+                <input type="hidden" asp-for="TraineeId" /> 
+
+                <div class="mb-3">
+                    <label class="form-label text-warning">Trainee</label>
+                    <input type="text" value="@(Model.Trainee?.User?.Username ?? "N/A")" class="form-control bg-dark text-white border-secondary" readonly />
+                    <small class="text-muted">Trainee name cannot be changed directly here.</small>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="PackageName" class="form-label text-warning">Package Name</label>
+                    <input asp-for="PackageName" class="form-control bg-dark text-white border-secondary" required />
+                    <span asp-validation-for="PackageName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Price" class="form-label text-warning">Price</label>
+                    <input asp-for="Price" class="form-control bg-dark text-white border-secondary" type="number" step="0.01" required />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Duration" class="form-label text-warning">Duration</label>
+                    <input asp-for="Duration" class="form-control bg-dark text-white border-secondary" required />
+                    <span asp-validation-for="Duration" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label text-warning">Description</label>
+                    <textarea asp-for="Description" class="form-control bg-dark text-white border-secondary"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-warning btn-lg fw-bold">Save Changes</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

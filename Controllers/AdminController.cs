@@ -35,7 +35,7 @@ namespace Gym.Controllers
         }
 
         // Reports Page
-   
+
 
 
 
@@ -48,12 +48,22 @@ namespace Gym.Controllers
             ViewBag.TotalTrainers = _context.Users.Count(u => u.Role == "Trainer");
             ViewBag.TotalTrainees = _context.Users.Count(u => u.Role == "Trainee");
 
+           
+
             return View();
         }
 
+        // في ملف AdminController.cs
+
+        public IActionResult ManageTrainers()
+        {
+            // هذا الإجراء يقوم بتوجيه المسؤول مباشرة إلى الإندكس الخاص بوحدة تحكم إدارة المدربين
+            // هذا يضمن أن يتم عرض قائمة المدربين
+            return RedirectToAction("Index", "ManageTrainers");
+        }
 
 
-
+      
 
     }
 }

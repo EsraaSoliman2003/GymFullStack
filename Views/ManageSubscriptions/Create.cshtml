@@ -1,0 +1,111 @@
+﻿@model Gym.Models.Subscription
+@{
+    ViewData["Title"] = "Create New Subscription";
+}
+
+<div class="vh-100 position-relative text-white"
+     style="background: linear-gradient(115deg, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 80%),
+             url('/images/bg.jpg') no-repeat center right / cover;
+             overflow: hidden;">
+
+    <div style="position:absolute; top:0; right:-100px; width:450px; height:100%;
+                background: radial-gradient(circle at 30% 50%, rgba(255, 193, 7, 0.25), transparent 75%);
+                filter: blur(50px); opacity: 0.8;"></div>
+
+    <div class="container py-5 d-flex justify-content-center align-items-center" style="position: relative; z-index:2;">
+
+        <div class="card bg-dark text-white p-4 shadow-lg" style="max-width: 600px; width: 100%; border: 2px solid #ffc107;">
+            
+            <h2 class="mb-4 text-warning fw-bold text-center">Add New Subscription</h2>
+
+            <form asp-action="Create" method="post">
+                @Html.AntiForgeryToken()
+                
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="PackageName" class="form-label text-warning">Package Name</label>
+                    <input asp-for="PackageName" class="form-control bg-dark text-white border-secondary" required />
+                    <span asp-validation-for="PackageName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Price" class="form-label text-warning">Price</label>
+                    <input asp-for="Price" class="form-control bg-dark text-white border-secondary" type="number" step="0.01" required />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Duration" class="form-label text-warning">Duration (e.g., 1 Month)</label>
+                    <input asp-for="Duration" class="form-control bg-dark text-white border-secondary" required />
+                    <span asp-validation-for="Duration" class="text-danger"></span>
+                </div>
+
+   <div class="mb-3">
+    <label for="TraineeUsername" class="form-label text-warning">Trainee Name</label>
+    <input type="text" id="TraineeUsername" name="TraineeUsername" 
+           value="@(ViewBag.TraineeUsername ?? "")" 
+           class="form-control bg-dark text-white border-secondary" required />
+    
+    @if (ViewData["TraineeError"] != null)
+    {
+        <span class="text-danger">@ViewData["TraineeError"]</span>
+    }
+</div>
+
+
+                @* <div class="mb-3">
+                    <label asp-for="TraineeId" class="form-label text-warning">Select Trainee</label>
+                    <select asp-for="TraineeId" class="form-select bg-dark text-white border-secondary" asp-items="ViewBag.TraineeId" required>
+                        <option value="">-- Select Trainee --</option>
+                    </select>
+                    <span asp-validation-for="TraineeId" class="text-danger"></span>
+                </div> *@
+
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label text-warning">Description (Optional)</label>
+                    <textarea asp-for="Description" class="form-control bg-dark text-white border-secondary"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-warning btn-lg fw-bold">Create Subscription</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    /* الأنماط الإضافية لضمان التناسق مع التصميم الداكن */
+    .card {
+        border-radius: 0.5rem;
+    }
+    .bg-dark {
+        background-color: rgba(33, 37, 41, 0.95) !important;
+    }
+    .text-warning {
+        color: #ffc107 !important;
+    }
+    .form-control, .form-select {
+        border: 1px solid #6c757d; /* لون رمادي داكن للحدود */
+        transition: border-color 0.3s ease-in-out;
+    }
+    .form-control:focus, .form-select:focus {
+        border-color: #ffc107; /* إطار أصفر عند التركيز */
+        box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+    }
+    .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+        color: #000;
+        font-weight: 600;
+    }
+</style>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

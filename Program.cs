@@ -7,7 +7,7 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Esraa")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ali")));
     
 builder.Services
       .AddFluentValidationAutoValidation()
