@@ -3,78 +3,45 @@
     ViewData["Title"] = "Add User";
 }
 
-<div class="vh-100 position-relative text-white"
-     style="background: linear-gradient(115deg, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 80%),
-            url('/images/bg.jpg') no-repeat center right / cover;
-            overflow: auto; padding: 40px;">
+<div class="admin-users-bg min-vh-100 text-white py-4 py-md-5">
+    <div class="container d-flex justify-content-center align-items-start align-items-md-center">
+        <div class="card users-form-card shadow-lg p-4 p-md-5">
 
-    <!-- Yellow blur effect -->
-    <div style="position:absolute; top:0; right:-100px; width:450px; height:100%;
-                background: radial-gradient(circle at 30% 50%, rgba(255, 193, 7, 0.25), transparent 75%);
-                filter: blur(50px); opacity: 0.8;"></div>
+            <h2 class="mb-4 text-warning text-center fw-bold">Add New User</h2>
 
-    <!-- Form container -->
-    <div class="card bg-dark text-white shadow-lg p-4"
-         style="background-color: rgba(0,0,0,0.65); border-radius: 25px; z-index: 2; max-width: 650px; margin: 60px auto;">
+            <form asp-action="Create" method="post">
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Username</label>
+                    <input asp-for="Username" class="form-control bg-dark text-white border-secondary" required />
+                </div>
 
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Email</label>
+                    <input asp-for="Email" type="email" class="form-control bg-dark text-white border-secondary"
+                        required />
+                </div>
 
-        <h2 class="mb-5 text-warning text-center fw-bold" style="letter-spacing: 1px;">Add New User</h2>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Password</label>
+                    <input asp-for="Password" type="password" class="form-control bg-dark text-white border-secondary"
+                        required />
+                </div>
 
-        <form asp-action="Create" method="post">
-            <div class="mb-3">
-                <label class="form-label fw-semibold">Username</label>
-                <input asp-for="Username" class="form-control bg-black text-white border-secondary" required />
-            </div>
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Role</label>
+                    <select asp-for="Role" class="form-select bg-dark text-white border-secondary">
+                        <option>Admin</option>
+                        <option>Trainer</option>
+                        <option>Trainee</option>
+                    </select>
+                </div>
 
-            <div class="mb-3">
-                <label class="form-label fw-semibold">Email</label>
-                <input asp-for="Email" type="email" class="form-control bg-black text-white border-secondary" required />
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label fw-semibold">Password</label>
-                <input asp-for="Password" type="password" class="form-control bg-black text-white border-secondary" required />
-            </div>
-            <div class="mb-4">
-                <label class="form-label fw-semibold">Role</label>
-                <select asp-for="Role" class="form-select form-select-lg">
-                    <option>Admin</option>
-                    <option>Trainer</option>
-                    <option>Trainee</option>
-                </select>
-            </div>
-
-            <div class="d-flex justify-content-between">
-                <button type="submit" class="btn btn-warning btn-lg fw-bold">Save</button>
-                <a href="@Url.Action("Index")" class="btn btn-secondary btn-lg fw-bold">Cancel</a>
-            </div>
-        </form>
+                <div class="d-flex flex-column flex-sm-row justify-content-between gap-2">
+                    <button type="submit" class="btn btn-warning btn-lg fw-bold w-100 w-sm-auto">Save</button>
+                    <a href="@Url.Action("Index")"
+                        class="btn btn-outline-light btn-lg fw-bold w-100 w-sm-auto">Cancel</a>
+                </div>
+            </form>
+        </div>
     </div>
-
 </div>
-
-<style>
-    .btn-warning {
-        background-color: #ffc107;
-        border-color: #ffc107;
-        color: #000;
-    }
-
-        .btn-warning:hover {
-            background-color: #e0a800;
-            border-color: #d39e00;
-            color: #000;
-        }
-
-    .btn-secondary {
-        background-color: #6c757d;
-        border-color: #6c757d;
-        color: #fff;
-    }
-
-        .btn-secondary:hover {
-            background-color: #5a6268;
-            border-color: #545b62;
-            color: #fff;
-        }
-</style>
