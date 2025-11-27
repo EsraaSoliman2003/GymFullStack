@@ -12,30 +12,31 @@ namespace Gym.Controllers
             _context = context;
         }
 
-        // قائمة كل المستخدمين
-        public IActionResult Index()
+        // قائمة المستخدمين + فلترة وبحث
+        public IActionResult Index(string? search, string? role)
         {
-            var users = _context.Users.ToList();
-            return View(users);
-        }
+            var query = _context.Users.AsQueryable();
 
-        // إنشاء مستخدم جديد
-        [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Create(User user)
-        {
-            if (ModelState.IsValid)
+            // فلتر بالـ role (Admin / Trainer / Trainee)
+            if (!string.IsNullOrWhiteSpace(role) && role != "All")
             {
-                _context.Users.Add(user);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
+                query = query.Where(u => u.Role == role);
             }
-            return View(user);
+
+            // بحث بالاسم أو الإيميل
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                query = query.Where(u =>
+                    u.Username.Contains(search) ||
+                    u.Email.Contains(search));
+            }
+
+            var users = query.ToList();
+
+            ViewBag.SelectedRole = role;
+            ViewBag.Search = search;
+
+            return View(users);
         }
 
         // تعديل مستخدم

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Gym.Models
 {
@@ -9,14 +10,16 @@ namespace Gym.Models
 
         [Required(ErrorMessage = "Trainee ID is required")]
         public int TraineeId { get; set; }
+
         [Required(ErrorMessage = "Meal type is required")]
         [StringLength(30, ErrorMessage = "Meal type cannot exceed 30 characters")]
-        public string MealType { get; set; } = string.Empty; // Breakfast, Lunch, Dinner
+        public string MealType { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Description is required")]
         [StringLength(300, ErrorMessage = "Description cannot exceed 300 characters")]
-        public string Description { get; set; } =string.Empty;
-        public Trainee Trainee { get; set; } = default!;
+        public string Description { get; set; } = string.Empty;
 
+        [ValidateNever]              // 👈 مهم
+        public Trainee? Trainee { get; set; }   // 👈 خليها nullable
     }
 }

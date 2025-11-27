@@ -1,0 +1,54 @@
+@model Gym.Models.Trainee
+@{
+    ViewData["Title"] = "Trainee Details";
+}
+
+<div class="container my-5 text-white">
+    <h2 class="text-warning mb-4">Trainee Details</h2>
+
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-header">
+                    Profile
+                </div>
+                <div class="card-body">
+                    <p><strong>Name:</strong> @Model.User?.Username</p>
+                    <p><strong>Email:</strong> @Model.User?.Email</p>
+                    <p><strong>Goal:</strong> @Model.Goal</p>
+                    <p>
+                        <strong>Date of Birth:</strong>
+                        @(Model.DateOfBirth.HasValue? Model.DateOfBirth.Value.ToString("yyyy-MM-dd") : "N/A")
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-header">
+                    Subscription
+                </div>
+                <div class="card-body">
+                    @if (Model.Subscription != null)
+                    {
+                        <p><strong>Package:</strong> @Model.Subscription.PackageName</p>
+                        <p><strong>Price:</strong> @Model.Subscription.Price.ToString("C")</p>
+                        <p><strong>Duration:</strong> @Model.Subscription.Duration</p>
+                        <p>@Model.Subscription.Description</p>
+                    }
+                    else
+                    {
+                        <p>No subscription assigned.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="ManageWorkout" asp-route-traineeId="@Model.Id" class="btn btn-warning me-2">Manage Workout</a>
+        <a asp-action="ManageDiet" asp-route-traineeId="@Model.Id" class="btn btn-info me-2">Manage Diet</a>
+        <a asp-action="Dashboard" class="btn btn-outline-light">Back to Dashboard</a>
+    </div>
+</div>

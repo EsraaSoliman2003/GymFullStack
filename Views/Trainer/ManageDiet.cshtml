@@ -1,0 +1,51 @@
+@model IEnumerable<Gym.Models.DietPlan>
+@{
+    ViewData["Title"] = "Manage Diet";
+    var trainee = ViewBag.Trainee as Gym.Models.Trainee;
+}
+
+<div class="container my-5 text-white">
+    <h2 class="text-warning mb-3">Diet Plan for @trainee?.User?.Username</h2>
+
+    <div class="mb-3">
+        <a asp-action="AddDiet" asp-route-traineeId="@trainee.Id" class="btn btn-warning">Add Diet Item</a>
+        <a asp-action="Dashboard" class="btn btn-outline-light ms-2">Back to Dashboard</a>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-dark border-warning">No diet plan yet.</div>
+    }
+    else
+    {
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Meal Type</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var diet in Model)
+                {
+                    <tr>
+                        <td>@diet.MealType</td>
+                        <td>@diet.Description</td>
+                        <td>
+                            <a asp-action="EditDiet" asp-route-id="@diet.Id" class="btn btn-sm btn-primary">Edit</a>
+                            <form asp-action="DeleteDiet" method="post" class="d-inline">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="id" value="@diet.Id" />
+                                <button type="submit" class="btn btn-sm btn-danger"
+                                        onclick="return confirm('Delete this diet item?');">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

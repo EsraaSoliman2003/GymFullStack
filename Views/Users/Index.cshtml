@@ -1,6 +1,8 @@
 ﻿@model IEnumerable<Gym.Models.User>
 @{
     ViewData["Title"] = "Manage Users";
+    var selectedRole = ViewBag.SelectedRole as string;
+    var search = ViewBag.Search as string;
 }
 
 <div class="vh-100 position-relative text-white"
@@ -8,16 +10,58 @@
             url('/images/bg.jpg') no-repeat center right / cover;
             overflow: auto; padding: 40px;">
 
-    <!-- Yellow blur effect -->
     <div style="position:absolute; top:0; right:-100px; width:450px; height:100%;
                 background: radial-gradient(circle at 30% 50%, rgba(255, 193, 7, 0.25), transparent 75%);
                 filter: blur(50px); opacity: 0.8;"></div>
 
-    <!-- Content container -->
-    <div class="card p-4 shadow-lg" style="background-color: rgba(0,0,0,0.75); border-radius: 15px; z-index: 2;">
+    <div class="card p-4 shadow-lg"
+         style="background-color: rgba(0,0,0,0.75); border-radius: 15px; z-index: 2;">
+
         <h2 class="mb-4 text-warning text-center fw-bold">Manage Users</h2>
 
-        <a href="@Url.Action("Create")" class="btn btn-warning mb-3 fw-bold">Add New User</a>
+        <!-- 🟡 فورم الفلترة والبحث -->
+        <form method="get" class="row g-2 mb-4">
+            <div class="col-md-4">
+                <input type="text"
+                       name="search"
+                       value="@search"
+                       class="form-control"
+                       placeholder="ابحث بالاسم أو الإيميل..." />
+            </div>
+
+            <div class="col-md-3">
+<select name="role" class="form-select">
+    <option value="All"
+            selected="@(string.IsNullOrEmpty(selectedRole) || selectedRole == "All" ? "selected" : null)">
+        كل الأدوار
+    </option>
+
+    <option value="Admin"
+            selected="@(selectedRole == "Admin" ? "selected" : null)">
+        Admin
+    </option>
+
+    <option value="Trainer"
+            selected="@(selectedRole == "Trainer" ? "selected" : null)">
+        Trainer
+    </option>
+
+    <option value="Trainee"
+            selected="@(selectedRole == "Trainee" ? "selected" : null)">
+        Trainee
+    </option>
+</select>
+
+            </div>
+
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-warning w-100">تطبيق الفلتر</button>
+            </div>
+
+            <div class="col-md-2">
+                <a asp-action="Index" class="btn btn-outline-light w-100">مسح الفلتر</a>
+            </div>
+        </form>
 
         <table class="table table-dark table-striped table-hover">
             <thead>
@@ -39,7 +83,8 @@
                         <td>@user.Role</td>
                         <td>
                             <a href="@Url.Action("Edit", new { id = user.Id })" class="btn btn-sm btn-primary">Edit</a>
-                            <a href="@Url.Action("Delete", new { id = user.Id })" class="btn btn-sm btn-danger"
+                            <a href="@Url.Action("Delete", new { id = user.Id })"
+                               class="btn btn-sm btn-danger"
                                onclick="return confirm('Are you sure?');">Delete</a>
                         </td>
                     </tr>
@@ -48,6 +93,7 @@
         </table>
     </div>
 </div>
+
 
 <style>
     .btn-warning {

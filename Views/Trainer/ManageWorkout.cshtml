@@ -1,0 +1,55 @@
+@model IEnumerable<Gym.Models.WorkoutPlan>
+@{
+    ViewData["Title"] = "Manage Workout";
+    var trainee = ViewBag.Trainee as Gym.Models.Trainee;
+}
+
+<div class="container my-5 text-white">
+    <h2 class="text-warning mb-3">Workout Plan for @trainee?.User?.Username</h2>
+
+    <div class="mb-3">
+        <a asp-action="AddWorkout" asp-route-traineeId="@trainee.Id" class="btn btn-warning">Add Exercise</a>
+        <a asp-action="Dashboard" class="btn btn-outline-light ms-2">Back to Dashboard</a>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-dark border-warning">No workout plan yet.</div>
+    }
+    else
+    {
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var plan in Model)
+                {
+                    <tr>
+                        <td>@plan.DayOfWeek</td>
+                        <td>@plan.ExerciseName</td>
+                        <td>@plan.Sets</td>
+                        <td>@plan.Reps</td>
+                        <td>
+                            <a asp-action="EditWorkout" asp-route-id="@plan.Id" class="btn btn-sm btn-primary">Edit</a>
+                            <form asp-action="DeleteWorkout" method="post" class="d-inline">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="id" value="@plan.Id" />
+                                <button type="submit" class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Delete this exercise?');">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

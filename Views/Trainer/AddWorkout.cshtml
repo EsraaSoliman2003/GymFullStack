@@ -1,0 +1,47 @@
+@model Gym.Models.WorkoutPlan
+@{
+    ViewData["Title"] = "Add Workout";
+}
+
+<div class="container my-5 text-white">
+    <h2 class="text-warning mb-4">Add Workout Exercise</h2>
+
+    <form asp-action="AddWorkout" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="TraineeId" />
+
+        <div class="mb-3">
+            <label asp-for="DayOfWeek" class="form-label">Day of Week</label>
+            <input asp-for="DayOfWeek" class="form-control" />
+            <span asp-validation-for="DayOfWeek" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ExerciseName" class="form-label">Exercise Name</label>
+            <input asp-for="ExerciseName" class="form-control" />
+            <span asp-validation-for="ExerciseName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Sets" class="form-label">Sets</label>
+            <input asp-for="Sets" class="form-control" />
+            <span asp-validation-for="Sets" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Reps" class="form-label">Reps</label>
+            <input asp-for="Reps" class="form-control" />
+            <span asp-validation-for="Reps" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-warning">Save</button>
+        <a asp-action="ManageWorkout" asp-route-traineeId="@Model.TraineeId"
+            class="btn btn-outline-light ms-2">Cancel</a>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

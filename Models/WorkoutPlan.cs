@@ -23,7 +23,7 @@ namespace Gym.Models
         [Required(ErrorMessage = "Trainee ID is required")]
         [Display(Name = "Trainee")]
         public int TraineeId { get; set; }
-        public Trainee Trainee { get; set; }= default!;
 
+        public Trainee? Trainee { get; set; }
     }
 }
