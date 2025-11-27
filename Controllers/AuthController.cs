@@ -140,7 +140,7 @@ namespace Gym.Controllers
             return RedirectToAction("Login", "Auth");
         }
         [HttpPost]
-        [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult LoginForAdmin(string username, string password)
         {
             var user = _context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
@@ -150,18 +150,17 @@ namespace Gym.Controllers
                 HttpContext.Session.SetString("Username", user.Username);
                 HttpContext.Session.SetString("Role", user.Role);
 
-                // Redirect حسب الدور
                 if (user.Role == "Admin")
                 {
-                    return RedirectToAction("Index", "Admin"); // Admin Dashboard
+                    return RedirectToAction("Index", "Admin");
                 }
                 else if (user.Role == "Trainer")
                 {
-                    return RedirectToAction("Index", "Trainers");
+                    return RedirectToAction("Dashboard", "Trainer");
                 }
                 else // Trainee
                 {
-                    return RedirectToAction("Index", "Trainees");
+                    return RedirectToAction("Dashboard", "Trainee");
                 }
             }
 

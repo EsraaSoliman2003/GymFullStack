@@ -3,8 +3,7 @@
     ViewData["Title"] = "Create New Subscription";
 }
 
-<div class="vh-100 position-relative text-white"
-     style="background: linear-gradient(115deg, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 80%),
+<div class="vh-100 position-relative text-white" style="background: linear-gradient(115deg, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 80%),
              url('/images/bg.jpg') no-repeat center right / cover;
              overflow: hidden;">
 
@@ -14,13 +13,14 @@
 
     <div class="container py-5 d-flex justify-content-center align-items-center" style="position: relative; z-index:2;">
 
-        <div class="card bg-dark text-white p-4 shadow-lg" style="max-width: 600px; width: 100%; border: 2px solid #ffc107;">
-            
+        <div class="card bg-dark text-white p-4 shadow-lg"
+            style="max-width: 600px; width: 100%; border: 2px solid #ffc107;">
+
             <h2 class="mb-4 text-warning fw-bold text-center">Add New Subscription</h2>
 
             <form asp-action="Create" method="post">
                 @Html.AntiForgeryToken()
-                
+
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
                 <div class="mb-3">
@@ -31,7 +31,8 @@
 
                 <div class="mb-3">
                     <label asp-for="Price" class="form-label text-warning">Price</label>
-                    <input asp-for="Price" class="form-control bg-dark text-white border-secondary" type="number" step="0.01" required />
+                    <input asp-for="Price" class="form-control bg-dark text-white border-secondary" type="number"
+                        step="0.01" required />
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
 
@@ -41,17 +42,18 @@
                     <span asp-validation-for="Duration" class="text-danger"></span>
                 </div>
 
-   <div class="mb-3">
-    <label for="TraineeUsername" class="form-label text-warning">Trainee Name</label>
-    <input type="text" id="TraineeUsername" name="TraineeUsername" 
-           value="@(ViewBag.TraineeUsername ?? "")" 
-           class="form-control bg-dark text-white border-secondary" required />
-    
-    @if (ViewData["TraineeError"] != null)
-    {
-        <span class="text-danger">@ViewData["TraineeError"]</span>
-    }
-</div>
+                <div class="mb-3">
+                    <label for="TraineeUsername" class="form-label text-warning">Trainee Name</label>
+                    <input type="text" id="TraineeUsername" name="TraineeUsername"
+                        value="@(ViewBag.TraineeUsername ?? "")"
+                        class="form-control bg-dark text-white border-secondary" required />
+
+
+                    @if (ViewData["TraineeError"] != null)
+                    {
+                        <span class="text-danger">@ViewData["TraineeError"]</span>
+                    }
+                </div>
 
 
                 @* <div class="mb-3">
@@ -83,20 +85,29 @@
     .card {
         border-radius: 0.5rem;
     }
+
     .bg-dark {
         background-color: rgba(33, 37, 41, 0.95) !important;
     }
+
     .text-warning {
         color: #ffc107 !important;
     }
-    .form-control, .form-select {
-        border: 1px solid #6c757d; /* لون رمادي داكن للحدود */
+
+    .form-control,
+    .form-select {
+        border: 1px solid #6c757d;
+        /* لون رمادي داكن للحدود */
         transition: border-color 0.3s ease-in-out;
     }
-    .form-control:focus, .form-select:focus {
-        border-color: #ffc107; /* إطار أصفر عند التركيز */
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #ffc107;
+        /* إطار أصفر عند التركيز */
         box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
     }
+
     .btn-warning {
         background-color: #ffc107;
         border-color: #ffc107;
@@ -106,6 +117,7 @@
 </style>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
-

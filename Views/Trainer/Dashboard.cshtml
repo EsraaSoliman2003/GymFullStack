@@ -1,0 +1,68 @@
+@model IEnumerable<Gym.Models.Trainee>
+@{
+    ViewData["Title"] = "Trainer Dashboard";
+}
+
+<div class="vh-100 position-relative text-white"
+     style="background: linear-gradient(115deg, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 80%),
+            url('/images/bg.jpg') no-repeat center right / cover;
+            overflow: auto; padding: 40px;">
+
+    <div style="position:absolute; top:0; right:-100px; width:450px; height:100%;
+                background: radial-gradient(circle at 30% 50%, rgba(255, 193, 7, 0.25), transparent 75%);
+                filter: blur(50px); opacity: 0.8;"></div>
+
+    <div class="container" style="position:relative; z-index:2;">
+        <h2 class="mb-4 text-warning fw-bold text-center">Trainer Dashboard</h2>
+        <p class="text-center text-muted mb-4">
+            Here you can see your trainees, their goals, and their plans.
+        </p>
+
+        @if (!Model.Any())
+        {
+            <div class="alert alert-dark border-warning text-center">
+                <h5 class="text-warning mb-2">No trainees assigned yet</h5>
+                <p>You currently don't have any trainees.</p>
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive shadow-lg rounded">
+                <table class="table table-dark table-striped table-bordered align-middle text-center">
+                    <thead class="table-warning text-dark">
+                        <tr>
+                            <th>Trainee</th>
+                            <th>Email</th>
+                            <th>Goal</th>
+                            <th>Workout Plans</th>
+                            <th>Diet Plans</th>
+                            <th>Subscription</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var trainee in Model)
+                        {
+                            <tr>
+                                <td>@(trainee.User?.Username ?? "N/A")</td>
+                                <td>@(trainee.User?.Email ?? "N/A")</td>
+                                <td>@(string.IsNullOrWhiteSpace(trainee.Goal) ? "Not set" : trainee.Goal)</td>
+                                <td>@(trainee.WorkoutPlans?.Count ?? 0)</td>
+                                <td>@(trainee.DietPlans?.Count ?? 0)</td>
+                                <td>
+                                    @if (trainee.Subscription != null)
+                                    {
+                                        @trainee.Subscription.PackageName
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary">No subscription</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>

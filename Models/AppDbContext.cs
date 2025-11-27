@@ -18,6 +18,8 @@ namespace Gym.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.Username)
                 .IsUnique();
@@ -25,6 +27,12 @@ namespace Gym.Models
             modelBuilder.Entity<User>()
                 .HasIndex(u => u.Email)
                 .IsUnique();
+
+            modelBuilder.Entity<Trainee>()
+                .HasOne(t => t.Subscription)
+                .WithOne(s => s.Trainee)
+                .HasForeignKey<Subscription>(s => s.TraineeId);
+
 
             modelBuilder.Entity<User>().HasData(
                 new User

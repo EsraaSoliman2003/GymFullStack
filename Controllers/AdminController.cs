@@ -26,7 +26,7 @@ namespace Gym.Controllers
         // Main Dashboard
         public IActionResult Index()
         {
-            ViewBag.TotalUsers = _context.Users.Count(u => u.Role == "User");
+            ViewBag.TotalUsers = _context.Users.Count();
             ViewBag.TotalTrainers = _context.Users.Count(u => u.Role == "Trainer");
             ViewBag.TotalTrainees = _context.Users.Count(u => u.Role == "Trainee");
             TempData["AdminWelcome"] = "You are logged in as Admin";
@@ -48,7 +48,7 @@ namespace Gym.Controllers
             ViewBag.TotalTrainers = _context.Users.Count(u => u.Role == "Trainer");
             ViewBag.TotalTrainees = _context.Users.Count(u => u.Role == "Trainee");
 
-           
+
 
             return View();
         }
@@ -63,7 +63,7 @@ namespace Gym.Controllers
         }
 
 
-      
+
 
     }
 }

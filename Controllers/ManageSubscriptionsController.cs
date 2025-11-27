@@ -21,7 +21,8 @@ namespace Gym.Controllers
             var trainees = _context.Trainees
                 .Include(t => t.User) // افترض أن هناك علاقة User
                 .OrderBy(t => t.User.Username)
-                .Select(t => new {
+                .Select(t => new
+                {
                     t.Id,
                     Username = t.User.Username + " (ID: " + t.Id + ")"
                 });
@@ -54,27 +55,60 @@ namespace Gym.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Subscription subscription, string TraineeUsername)
         {
-            // مش محتاج ModelState.Remove لأي حاجة دلوقتي
+            // أولاً نتأكد إن الداتا الاساسية مظبوطة
+            if (!ModelState.IsValid)
+            {
+                return View(subscription);
+            }
+
+            // 1) نجيب اليوزر اللي Role = Trainee
             var traineeUser = await _context.Users
                 .FirstOrDefaultAsync(u => u.Username == TraineeUsername && u.Role == "Trainee");
 
             if (traineeUser == null)
             {
                 ViewData["TraineeError"] = "The specified Username does not exist or is not a Trainee.";
+                ViewBag.TraineeUsername = TraineeUsername;
                 return View(subscription);
             }
 
-            var traineeRecord = await _context.Trainees.FirstOrDefaultAsync(t => t.UserId == traineeUser.Id);
-            if (traineeRecord != null)
+            // 2) نجيب أو ننشئ الـ Trainee المرتبط باليوزر ده
+            var traineeRecord = await _context.Trainees
+                .FirstOrDefaultAsync(t => t.UserId == traineeUser.Id);
+
+            if (traineeRecord == null)
             {
-                subscription.TraineeId = traineeRecord.Id;
-                _context.Subscriptions.Add(subscription);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                traineeRecord = new Trainee
+                {
+                    UserId = traineeUser.Id,
+                    Goal = "Fitness",     // قيمة افتراضية
+                    DateOfBirth = null
+                };
+
+                _context.Trainees.Add(traineeRecord);
+                await _context.SaveChangesAsync(); // عشان الـ Id يتولد
             }
 
-            return View(subscription);
+            // 3) نتاكد إن مفيش اشتراك قديم لنفس المتدرب (عشان عندك Unique على TraineeId)
+            var existingSub = await _context.Subscriptions
+                .FirstOrDefaultAsync(s => s.TraineeId == traineeRecord.Id);
+
+            if (existingSub != null)
+            {
+                ModelState.AddModelError(string.Empty, "This trainee already has a subscription.");
+                ViewBag.TraineeUsername = TraineeUsername;
+                return View(subscription);
+            }
+
+            // 4) نربط الاشتراك بالمتدرب
+            subscription.TraineeId = traineeRecord.Id;
+
+            _context.Subscriptions.Add(subscription);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
         }
+
 
         // 3. التعديل (GET): جلب بيانات اشتراك للتعديل
         [HttpGet]
@@ -105,10 +139,10 @@ namespace Gym.Controllers
             return View(subscription);
         }
 
-        
+
 
         [HttpPost]
-       
+
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
