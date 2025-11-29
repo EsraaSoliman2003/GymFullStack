@@ -1,0 +1,57 @@
+﻿@model Gym.Models.DietPlan
+
+@{
+    ViewData["Title"] = "Edit Diet Plan";
+}
+
+<div class="vh-100 position-relative text-white"
+     style="background: linear-gradient(115deg, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.9) 70%),
+            url('/images/diet-bg.jpg') center/cover no-repeat;">
+    <div class="position-absolute top-50 start-50 translate-middle" style="width: 500px;">
+
+        <div class="card shadow-lg border-0 rounded-4" style="background: rgba(0,0,0,0.75);">
+            <div class="card-body p-4">
+
+                <h3 class="text-center mb-4 text-warning fw-bold">Edit Diet Plan</h3>
+
+                <form asp-action="EditDiet" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="TraineeId" />
+
+                    <!-- Meal Type -->
+                    <div class="mb-3">
+                        <label asp-for="MealType" class="form-label fw-bold text-white"></label>
+                        <input asp-for="MealType" class="form-control rounded-3" />
+                        <span asp-validation-for="MealType" class="text-danger"></span>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label fw-bold text-white"></label>
+                        <textarea asp-for="Description" class="form-control rounded-3" rows="4"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-warning w-100 fw-bold rounded-3 py-2 mt-2">
+                        Save Changes
+                    </button>
+
+                    <a asp-action="ManageDiet"
+                       asp-route-traineeId="@Model.TraineeId"
+                       class="btn btn-outline-light w-100 fw-bold rounded-3 py-2 mt-3">
+                        Back
+                    </a>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

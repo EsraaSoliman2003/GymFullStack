@@ -1,0 +1,61 @@
+﻿@model Gym.Models.WorkoutPlan
+@{
+    ViewData["Title"] = "Edit Workout";
+}
+
+<div class="vh-100 position-relative text-white"
+     style="background: linear-gradient(115deg, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4)),
+            url('/images/workout.jpg') center/cover no-repeat;">
+    <div class="position-absolute top-50 start-50 translate-middle" style="width: 500px;">
+
+        <div class="card bg-dark text-white shadow-lg" style="border-radius: 25px;">
+            <div class="card-body p-4">
+
+                <h2 class="text-center mb-4">Edit Workout Plan</h2>
+
+                <form asp-action="EditWorkout" method="post">
+
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="TraineeId" />
+
+                    <div class="mb-3">
+                        <label asp-for="DayOfWeek" class="form-label"></label>
+                        <input asp-for="DayOfWeek" class="form-control bg-secondary text-white" />
+                        <span asp-validation-for="DayOfWeek" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="ExerciseName" class="form-label"></label>
+                        <input asp-for="ExerciseName" class="form-control bg-secondary text-white" />
+                        <span asp-validation-for="ExerciseName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Sets" class="form-label"></label>
+                        <input asp-for="Sets" class="form-control bg-secondary text-white" />
+                        <span asp-validation-for="Sets" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Reps" class="form-label"></label>
+                        <input asp-for="Reps" class="form-control bg-secondary text-white" />
+                        <span asp-validation-for="Reps" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <a asp-action="ManageWorkout" asp-route-traineeId="@Model.TraineeId"
+                           class="btn btn-outline-light px-4">Back</a>
+
+                        <button type="submit" class="btn btn-primary px-4">Save Changes</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
